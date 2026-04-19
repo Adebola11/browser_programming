@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn to fetch and display user data from a public REST API." />
+  <title>Lecture – REST API Fetch</title>
+  <link rel="stylesheet" href="exercise.css" />
+</head>
+<body>
+
+  <header class="page-header">
+    <h1>Lecture – REST API Fetch</h1>
+    <p class="lead">This exercise loads user data from a public API and renders it as interactive cards.</p>
+  </header>
+
+  <main class="container">
+    
+    <section class="controls" aria-label="Data controls">
+      <button type="button" id="btnLoadUsers" class="btn-primary">
+        Load Users
+      </button>
+      <span id="statusText" class="status-hint" aria-live="polite"></span>
+    </section>
+
+    <section class="results" aria-label="User results">
+      <!-- User cards rendered here by JavaScript -->
+      <ul id="userList" class="user-grid"></ul>
+    </section>
+
+    <section class="console-panel" aria-label="Debug output">
+      <h2>Console Output</h2>
+      <pre id="output" class="output-block" role="log" aria-live="polite"></pre>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <p>Browser Programming — REST API Exercise</p>
+  </footer>
+
+  <script src="exercise.js" defer></script>
+</body>
+</html>
