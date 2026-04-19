@@ -1,0 +1,28 @@
+const $ = id => document.getElementById(id);
+
+const api = (url, elId, render) => {
+  const el = $(elId);
+  el.innerHTML = '<span class="loading">Loading...</span>';
+  
+  fetch(url)
+    .then(r => r.json())
+    .then(data => el.innerHTML = render(data))
+    .catch(err => {
+      el.innerHTML = '<span class="error">Error: Could not connect to backend. Is the server running?</span>';
+      console.error(err);
+    });
+};
+
+const getMessage = () => 
+  api('http://localhost:3000/api/message', 'output', d => `
+    <strong>Message:</strong> ${d.message}<br>
+    <strong>Course:</strong> ${d.course}<br>
+    <strong>Year:</strong> ${d.year}<br>
+    <strong>Time:</strong> ${new Date(d.time).toLocaleString()}
+  `);
+
+const getStudent = () => 
+  api('http://localhost:3000/api/student', 'student-output', d => `
+    <strong>Name:</strong> ${d.name}<br>
+    <strong>Role:</strong> ${d.role}
+  `);
