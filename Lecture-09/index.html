@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Backend API connectivity test panel" />
+  <title>Backend API Test</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="page-header">
+    <h1>Backend API Test</h1>
+  </header>
+
+  <main class="container">
+
+    <section class="controls" aria-label="Test endpoints">
+      <button type="button" id="btnMessage" class="btn-primary">
+        Get Message
+      </button>
+      <button type="button" id="btnStudent" class="btn-primary">
+        Get Student
+      </button>
+    </section>
+
+    <section class="response-panel" aria-labelledby="msg-heading">
+      <h2 id="msg-heading">Message Response</h2>
+      <div id="output" class="output-block" aria-live="polite">
+        <span class="placeholder">Response will appear here...</span>
+      </div>
+    </section>
+
+    <section class="response-panel" aria-labelledby="student-heading">
+      <h2 id="student-heading">Student Response</h2>
+      <div id="student-output" class="output-block" aria-live="polite">
+        <span class="placeholder">Response will appear here...</span>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
